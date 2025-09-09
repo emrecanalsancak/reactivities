@@ -11,7 +11,6 @@ type Props = {
   openForm: (id: string) => void;
   closeForm: () => void;
   editMode: boolean;
-  deleteActivity: (id: string) => void;
 };
 
 function ActivityDasboard({
@@ -22,16 +21,11 @@ function ActivityDasboard({
   openForm,
   closeForm,
   editMode,
-  deleteActivity,
 }: Props) {
   return (
     <Grid container spacing={3}>
       <Grid size={7}>
-        <ActivityList
-          activities={activities}
-          selectActivity={selectActivity}
-          deleteActivity={deleteActivity}
-        />
+        <ActivityList activities={activities} selectActivity={selectActivity} />
       </Grid>
 
       <Grid size={5}>
