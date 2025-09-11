@@ -6,6 +6,7 @@ function HomePage() {
   return (
     <Paper
       sx={{
+        borderRadius: 0,
         color: "white",
         display: "flex",
         flexDirection: "column",
