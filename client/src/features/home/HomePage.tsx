@@ -39,7 +39,12 @@ function HomePage() {
         to="/activities"
         size="large"
         variant="contained"
-        sx={{ height: 80, borderRadius: 4, fontSize: "1.5rem" }}
+        sx={{
+          height: 80,
+          borderRadius: 4,
+          fontSize: "1.5rem",
+          backgroundColor: "#4649ff",
+        }}
       >
         Take me to the activities!
       </Button>
