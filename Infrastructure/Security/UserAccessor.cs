@@ -14,11 +14,11 @@ AppDbContext dbContext) : IUserAccessor
 {
     public async Task<User> GetUserAsync()
     {
-        return await dbContext.Users.FindAsync(GetUSerId())
+        return await dbContext.Users.FindAsync(GetUserId())
             ?? throw new UnauthorizedAccessException("No user is logged in");
     }
 
-    public string GetUSerId()
+    public string GetUserId()
     {
         return httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier)
             ?? throw new Exception("No user found");
@@ -26,7 +26,7 @@ AppDbContext dbContext) : IUserAccessor
 
     public async Task<User> GetUserWithPhotosAsync()
     {
-        var userId = GetUSerId();
+        var userId = GetUserId();
 
         return await dbContext.Users
                 .Include(x => x.Photos)
